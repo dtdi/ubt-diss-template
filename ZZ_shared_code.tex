@@ -1,0 +1,169 @@
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage[noabbrev]{cleveref}
+
+\usepackage{subcaption}
+\usepackage{a4wide}
+
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{thmtools}
+
+\usepackage{multirow}
+\usepackage{titlesec}
+\usepackage{rotating}
+
+\usepackage[nohyperlinks, printonlyused,nolist ]{acronym}
+
+\usepackage[ngerman, english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes,harveyballs}
+
+\usepackage[justification=centering, labelfont=bf, font=footnotesize, figurename=Figure]{caption}
+
+\usepackage[inline,shortlabels]{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt}
+
+\usepackage[onehalfspacing]{setspace}
+\renewcommand{\baselinestretch}{1.3} % Zeilenabstand
+\renewcommand{\arraystretch}{1.25} 
+
+
+\usepackage{palatino}
+\usepackage[scaled=1.0]{helvet} % Schriftart
+\usepackage{courier}
+
+
+\usepackage[
+style=apa, 
+dashed=false,
+natbib=true,
+backend=biber, 
+sorting=nyt, 
+uniquename=init,
+maxbibnames=20, 
+maxcitenames=2, 
+giveninits=true, 
+date=year,
+bibencoding=inputenc
+]{biblatex}
+
+
+
+\newcommand*{\fullref}[1]{\cref{#1} (\nameref{#1})} % One single link
+
+
+\preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
+\preto\citeauthor{\AtNextCite{\defcounter{maxnames}{99}}}
+
+\newrobustcmd*{\citefirstlastauthor}{\AtNextCite{\DeclareNameAlias{labelname}{given-family}}\citeauthor}
+
+\newcommand{\paperEntry}[1]{
+\textbf{\hyperref[#1]{Research Paper \citefield{#1}{reprinttitle}: \citefield{#1}{title}}} \\
+\fullcite{#1}}
+
+\newcommand{\citen}[1]{\hyperref[#1]{\citefield{#1}{reprinttitle}}}
+
+\newcommand{\Citen}[1]{\hyperref[#1]{Research Paper \citefield{#1}{reprinttitle}}}
+
+\newcommand{\paperContrib}[1]{
+Research Paper \citefield{#1}{reprinttitle} entitled \citetitle{#1} (\cite{#1}, ~\Cref{#1})}
+
+\newcommand{\longEntry}[1]{
+\section{Research Paper \citefield{#1}{reprinttitle}: \citefield{#1}{title}}
+\label{#1}
+\input{#1_short}
+\clearpage
+}
+
+\newcommand{\disstitle}{Your Awesome Dissertation Title}
+
+
+\newcommand{\titeleosafelu}{PIIS}
+
+\newcommand{\includeLong}[2]{
+\renewcommand{\titeleosafelu}{#2}
+\chapter{\texorpdfstring{Research Paper \citefield{#1}{reprinttitle}: \citefield{#1}{title}}{\titeleosafelu}}
+\label{#1}
+\chaptermark{#2}
+\input{#1_long}
+\clearpage
+}
+
+%% Schriftgröße in Tabellen (global)
+\usepackage{floatrow}
+\newcommand\tablefontsizeoverview{normalsize}
+\newcommand\tablefontsizepaper{footnotesize}
+\DeclareFloatFont{\tablefontsizeoverview}{\normalsize}
+\DeclareFloatFont{\tablefontsizepaper}{\footnotesize} % "scriptsize" is defined by floatrow, "small" not
+\floatsetup[table]{font=\tablefontsizepaper, capposition=top}
+
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{-20pt} % Adjust this value to reduce the space before the chapter title
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \Huge\bfseries \thechapter\quad
+    \fi
+    \interlinepenalty\@M
+    \Huge \bfseries #1\par\nobreak
+    \vskip 10pt % Adjust this value to reduce the space after the chapter title
+  }}
+\makeatother
+
+
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{tabularx}
+
+
+\setlength{\parskip}{0pt}
+
+
+\usepackage{csquotes}
+\usepackage[english]{babel}
+\usepackage[inline,shortlabels]{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt}
+
+\renewcommand{\arraystretch}{1.25} 
+
+\usepackage{pdfrender}
+\usepackage{dblfloatfix}
+
+\addbibresource{references.bib}
+\setlength{\parindent}{0em} 
+\DeclareBibliographyCategory{ignore}
+\addtocategory{ignore}{paper_a}
+\addtocategory{ignore}{paper_b}
+\addtocategory{ignore}{paper_xyz}
+
+
+\DeclareBibliographyCategory{ignore_a}
+
+\DeclareBibliographyCategory{ignore_b}
+\addtocategory{ignore_b}{paper_b}
+
+
+\pagestyle{fancy}
+
+
+% Einzug im Inhaltsverzeichnis
+\usepackage{tocloft}
+
+% Abbildungsverzeichnis
+\renewcommand\cftfigpresnum{\figurename~}% <- Prepend `Figure' in front of number
+\renewcommand\cftfigaftersnum{:}% <- Append `:' behind number
+\setlength{\cftfignumwidth}{5 em}
+\setlength{\cftfigindent}{0 em}  % remove indentation from figures in lof
+
+
+% Tabellenverzeichnis
+\renewcommand\cfttabpresnum{\tablename~}% <- Prepend `Table' in front of number
+\renewcommand\cfttabaftersnum{:}% <- Append `:' behind number
+\setlength{\cfttabnumwidth}{5 em}
+\setlength{\cfttabindent}{0 em}  % remove indentation from figures in lof

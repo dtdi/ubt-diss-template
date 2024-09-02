@@ -1,0 +1,86 @@
+\documentclass[10pt, twoside, a4paper, hidelinks]{report}
+
+
+% Tiefe der Nummerierung von Überschriften
+\setcounter{secnumdepth}{5}
+
+
+\input{ZZ_shared_code}
+
+
+\begin{document}
+\input{02_Acronyms}
+
+% Tiefe der Nummerierung im Inhaltsverzeichnis
+\setcounter{tocdepth}{2}
+
+\pagenumbering{roman}
+
+% Abgabeversion ohne datum Kolloquium
+\input{01_Cover_Abgabeversion}
+
+\fancyhead{}
+\fancyhead[L]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\fancyhead[LO,RE]{\thepage}
+\fancyfoot{}
+
+%% Abstract %%    
+\input{03_Abstract}
+
+%% Table of Contents %%
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+%\clearpage
+
+%% List of Figures %%
+\listoffigures
+\clearpage
+%% List of Tables %%
+
+\listoftables
+\vfill
+\section*{Copyright Statement}
+
+\textit{The following chapters are partly comprised of content taken from the research articles in this thesis. 
+To improve the readability of the text, I have omitted the standard labeling of these citations.}
+\clearpage
+
+
+\setlength{\parskip}{0.5em} 
+
+% Anpassung der Seitenzahlen
+\clearpage
+\pagenumbering{arabic}  
+\setcounter{page}{1}
+
+%% Main part %%
+\input{10_Introduction}
+\clearpage
+
+\input{21_one}
+\clearpage
+
+\input{22_two}
+\clearpage
+
+\clearpage
+\input{30_Conclusion}
+\clearpage
+
+%% Bibliography %%
+\printbibliography[notcategory=ignore,heading=bibintoc]
+\newpage
+
+%% Appendix %%
+\input{90_Appendix}
+
+\clearpage
+\captionsetup[figure]{list=no}
+\captionsetup[table]{list=no}
+
+\includeLong{paper_a}{Short Title for Paper A}
+
+\includeLong{paper_b}{Short Title for Paper B}
+
+\end{document}

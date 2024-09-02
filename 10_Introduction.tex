@@ -1,0 +1,42 @@
+\chapter{Introduction}
+\label{cha:Introduction}
+
+\section{Motivation}
+\label{sec:Motivation}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\section{Research Objectives}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\section{Structure of the Dissertation and Embedding of the Research Papers}
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\begin{table}
+  \centering
+  \begin{tabularx}{\linewidth}{c X}
+       \toprule
+       \textbf{\large \ref{cha:Introduction}} & \textbf{\large \nameref{cha:Introduction}} \\ 
+       \midrule
+       \textbf{\large \ref{cha:one}} & \textbf{\large \nameref{cha:one}} \\ 
+       \textbf{\citen{paper_a}} & \textbf{\citefield{paper_a}{title}} \\
+       & \textit{\citefirstlastauthor{paper_a}} \\
+       \midrule
+       \textbf{\large \ref{cha:two}} & \textbf{\large \nameref{cha:two}} \\
+       \textbf{\citen{paper_b}} & \textbf{\citefield{paper_b}{title}} \\ & \textit{\citefirstlastauthor{paper_b}} \\
+       \midrule
+       \textbf{\large \ref{cha:Conclusion}} & \textbf{\large \nameref{cha:Conclusion}} \\
+       \bottomrule
+  \end{tabularx}
+  \caption{Structure of this thesis and embedding of the research papers.}
+  \label{m:tab:overview}
+\end{table}
+
+
+\Cref{cha:one} (including \citen{paper_a}) presents one paper. 
+\Citen{paper_a} is awesome. 
+
+\Cref{cha:two} (including \citen{paper_b}) presents another paper.
+\Citen{paper_b} is also awesome.
