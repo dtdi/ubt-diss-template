@@ -28,4 +28,8 @@ This template is licensed under the [MIT License](LICENSE). Feel free to use and
 
 ## Contact
 
-If you have any questions or suggestions regarding this template, please feel free to contact the project maintainer at [email@example.com](mailto:email@example.com).
+If you have any questions or suggestions regarding this template, please feel free to contact the project maintainer.
+
+## More
+
+[<img src="https://dtdi.de/ads/ubt-diss-template.png" width="419px" />](https://dtdi.de/i.php?repo=ubt-diss-template)
