@@ -72,17 +72,16 @@ bibencoding=inputenc
 \newcommand{\paperContrib}[1]{
 Research Paper \citefield{#1}{reprinttitle} entitled \citetitle{#1} (\cite{#1}, ~\Cref{#1})}
 
-\newcommand{\longEntry}[1]{
-\section{Research Paper \citefield{#1}{reprinttitle}: \citefield{#1}{title}}
+\newcommand{\titeleosafelu}{PIIS}
+
+\newcommand{\longEntry}[2]{
+\renewcommand{\titeleosafelu}{#2}
+\section{\texorpdfstring{Research Paper \citefield{#1}{reprinttitle}: \citefield{#1}{title}}{\titeleosafelu}}
 \label{#1}
 \input{#1_short}
 \clearpage
 }
 
-\newcommand{\disstitle}{Your Awesome Dissertation Title}
-
-
-\newcommand{\titeleosafelu}{PIIS}
 
 \newcommand{\includeLong}[2]{
 \renewcommand{\titeleosafelu}{#2}
@@ -92,6 +91,11 @@ Research Paper \citefield{#1}{reprinttitle} entitled \citetitle{#1} (\cite{#1}, 
 \input{#1_long}
 \clearpage
 }
+
+\newcommand{\disstitle}{Your Awesome Dissertation Title}
+
+
+
 
 %% Schriftgröße in Tabellen (global)
 \usepackage{floatrow}
